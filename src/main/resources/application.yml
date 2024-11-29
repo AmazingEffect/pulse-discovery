@@ -1,0 +1,27 @@
+server:
+  port: 8761                     # Eureka 서버의 기본 포트 번호입니다. 일반적으로 8761을 표준으로 사용합니다.
+
+spring:
+  application:
+    name: pules-eureka
+  cloud:
+    config:
+      enabled: false             # Spring Cloud Config 서버 사용을 비활성화합니다. 현재는 로컬 설정만 사용합니다.
+
+eureka:
+  instance:
+    hostname: localhost          # Eureka 서버의 호스트 이름입니다. 개발 환경에서는 localhost를 사용합니다.
+  client:
+    registerWithEureka: false    # 자기 자신을 Eureka 서버에 등록하지 않도록 설정합니다.
+    fetchRegistry: false         # 다른 서비스의 정보를 가져오지 않도록 설정합니다. 서버 자체는 레지스트리가 필요하지 않습니다.
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/    # Eureka 서버의 위치를 지정합니다.
+  server:
+    waitTimeInMsWhenSyncEmpty: 0     # 서버 시작 시 레지스트리가 비어있을 때 대기 시간을 0으로 설정하여 즉시 시작합니다.
+    enableSelfPreservation: false    # 개발 환경에서는 자체 보존 모드를 비활성화하여 빠른 서비스 등록/해제가 가능하도록 합니다.
+                                     # 운영 환경에서는 true로 설정하여 네트워크 문제 시에도 서비스 레지스트리를 유지하는 것이 좋습니다.
+
+logging:
+  level:
+    com.netflix.eureka: OFF       # Eureka 관련 로그를 비활성화하여 로그 출력을 줄입니다.
+    com.netflix.discovery: OFF    # 서비스 디스커버리 관련 로그를 비활성화합니다.
