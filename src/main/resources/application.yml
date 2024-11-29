@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: eureka-server          # 애플리케이션의 고유 식별자로 사용되는 이름입니다.
+    name: pules-eureka
   cloud:
     config:
       enabled: false             # Spring Cloud Config 서버 사용을 비활성화합니다. 현재는 로컬 설정만 사용합니다.
