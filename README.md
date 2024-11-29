@@ -2,6 +2,7 @@
 
 ## 유레카 웹 접속 방법
 - ```http://localhost:8761``` 로 접속하면 유레카 대시보드를 확인할 수 있습니다.
+- ```https://cloud.spring.io/spring-cloud-netflix/reference/html/``` 공식 문서를 살펴보시면 조금 더 자세히 알 수 있습니다.
 
 ## AWS 환경에서 유레카 적용하는 방법
 - 로컬환경과 AWS 환경에서 유레카 서버를 적용하는 방법은 다릅니다.
